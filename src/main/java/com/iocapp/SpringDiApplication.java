@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import com.iocapp.model.Integrator;
 import com.iocapp.model.Task;
 
 @SpringBootApplication
@@ -18,6 +19,9 @@ public class SpringDiApplication {
 		t.execute();
 		Task t2=(Task)ac.getBean("image");
 		t2.execute();
+		
+		Integrator integrator=(Integrator)ac.getBean("integrate");
+		integrator.integrate();
 	}
 
 }
