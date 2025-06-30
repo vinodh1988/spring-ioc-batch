@@ -2,6 +2,7 @@ package com.iocapp.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 import com.iocapp.model.ImageCreator;
 import com.iocapp.model.Integrator;
@@ -15,11 +16,13 @@ public class CentralConfig {
 	}
 	
 	@Bean(name="text")
+	@Scope("prototype") // This ensures a new instance is created each time
 	public Task textTask() {
 		return new TextCreator();
 	}
 	
 	@Bean(name="image")
+	@Scope("prototype") // This ensures a new instance is created each time
 	public Task imageTask() {
 		return new ImageCreator();
 	}
