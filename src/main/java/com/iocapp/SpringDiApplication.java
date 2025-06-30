@@ -22,6 +22,7 @@ public class SpringDiApplication {
 		
 		Integrator integrator=(Integrator)ac.getBean("integrate");
 		integrator.integrate();
+		integrator.allTasks();
 	}
 
 }
